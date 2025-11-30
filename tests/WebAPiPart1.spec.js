@@ -20,10 +20,6 @@ test('Browser context playwright testcase',async ({page})=>
 const ordersHeader= page.locator("button[routerlink*='myorders']");
 const rows = page.locator("tbody tr");
 const orderIdDetails = page.locator(".col-text");
-
-
-
-
 await page.addInitScript((token)=>{
     window.localStorage.setItem('token',token);
 },Orderesponse.token);
@@ -46,10 +42,8 @@ for (let i = 0; i <await rows.count(); ++i)
 
 const pid1=await orderIdDetails.textContent();
 console.log(pid1);
-    await page.pause();
+await page.pause();
 expect (Orderesponse.ordernumber.includes(pid1)).toBeTruthy();
-
-
 console.log("swati");    
 
 });
