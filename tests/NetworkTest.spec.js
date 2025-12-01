@@ -3,7 +3,7 @@ import { ApiUtils } from './utils/ApiUtils.js';
 
 const loginPayload={userEmail: "jswati12@gmail.com", userPassword: "Data@1234"}
 const orderPayload={orders:[{country:"India",productOrderedId:"68a961459320a140fe1ca57a"}]};
-const fakePayloadOrders={data:[], message:"No Orders"};
+const fakePayLoadOrders = { data: [], message: "No Orders" };
 let Orderesponse;
 
 
@@ -18,24 +18,29 @@ test.beforeAll(async()=> {
 
 test('Verify the emplty state',async ({page})=>
 {
-   await page.addInitScript((token)=>{
-    window.localStorage.setItem('token',token);
-},Orderesponse.token);
+  page.addInitScript(value => { 
+    window.localStorage.setItem('token', value);
+  }, Orderesponse.token);
+
 await page.goto("https://rahulshettyacademy.com/client");
-await page.route("https://rahulshettyacademy.com/api/ecom/order/get-orders-for-customer/656765559fd99c85e8db29cc",
+await page.route("https://rahulshettyacademy.com/api/ecom/order/get-orders-for-customer/*",
    async route=>{
       //intercepting the response- API Response->{Playwright fake response}->Browser and returning empty array 
  const response=await page.request.fetch(route.request());
- let body=JSON.stringifyfakePayloadOrders;
-        route.fulfill({
+ let body=JSON.stringify(fakePayLoadOrders);
+       await route.fulfill(
+         {
             response,
-            body, 
-         }        
-         )});
+            body     
+         }
+        );
+   });
 
 const ordersHeader= page.locator("button[routerlink*='myorders']");    
 await ordersHeader.click();
-     await page.pause();
+   await page.waitForResponse("https://rahulshettyacademy.com/api/ecom/order/get-orders-for-customer/*")
+ 
+  console.log(await page.locator(".mt-4").textContent());
 
 
 }
