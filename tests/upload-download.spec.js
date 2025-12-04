@@ -41,12 +41,15 @@ test ('file upload download test', async ({ page }) =>
 
  
         await page.goto('https://rahulshettyacademy.com/upload-download-test/index.html');       
-        const downloadpromise = page.waitForEvent('download');
-  await page.getByRole('button', { name: 'Download' }).click();
-           const d1=await downloadpromise;
+       // const downloadpromise = page.waitForEvent('download');
+
+             const [Download] = await Promise.all([
+      page.waitForEvent('download'),
+     await page.getByRole('button', { name: 'Download' }).click()
+    ]);
            
              //const filePath = 'C:\\Users\\jswat\\Downloads\\download.xlsx'; 
-             const filePath = await d1.path();
+             const filePath = await Download.path();
 
       await readExcelFile(textSearch,updateValue,{changerow:0,changecol:2},filePath);
         await page.locator("#fileinput").click();
