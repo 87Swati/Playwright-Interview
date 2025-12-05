@@ -1,11 +1,9 @@
-
-
-import { LoginPage } from './Loginpage';
-import { MycartPage } from './MycartPage';
-import { OrdersPage } from './OrdersPage';
-import { DashboardPage } from './DashboardPage';
-import { CheckoutPage } from './CheckoutPage';
-import { OrdersummaryPage } from './OrdersummaryPage';  
+import { LoginPage } from './LoginPage.js';
+import { MycartPage } from './MycartPage.js';
+import { OrdersPage } from './OrdersPage.js ';
+import { DashboardPage } from './DashboardPage.js';
+import { CheckoutPage } from './CheckoutPage.js';   
+import { OrdersummaryPage } from './OrdersummaryPage.js';
 
 
 
