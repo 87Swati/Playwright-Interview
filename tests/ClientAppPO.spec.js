@@ -32,7 +32,7 @@ expect(ordernumber.includes(await orderspageobject.getOrderId())).toBeTruthy();
 };
 
 
-Customtest.only(`Client app login test`,async ({page,testdataorder})=>
+Customtest(`Client app login test`,async ({page,testdataorder})=>
 {
    console.log(testdataorder.productname);
 const poManager = new POManager(page);

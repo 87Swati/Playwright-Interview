@@ -18,9 +18,9 @@ const config = defineConfig({
     timeout: 5000,
   },
   reporter: 'html',
-  use: {
-    viewport:null,
-  },
+  retries: 1,
+  //trace: 'on-first-retry',
+ 
    // fullyParallel: true,  
   /* Run tests in files in parallel */
 
@@ -35,12 +35,12 @@ const config = defineConfig({
         browserName: 'chromium',
         headless: true,
         screenshot: 'only-on-failure',//off //on //only-on-failure
-        trace: 'retain-on-failure',//off //on //retain-on-failure
-        viewport: { width: 720, height: 720 },
+       // trace: 'retain-on-failure',//off //on //retain-on-failure
+       trace: 'on-first-retry',
         //...devices[' Desktop Chrome' ],
         ignoreHTTPSErrors: true,
         permissions: ['geolocation', 'notifications', 'midi', 'camera', 'microphone' ],
-        video: 'retain-on-failure',   
+        video: 'on-first-retry',  
       
             
 
