@@ -3,7 +3,7 @@ export class MycartPage {
 
     constructor(page) {
         this.page = page;
-        this.div = this.page.locator("div li")
+        this.cartProducts= this.page.locator("div li").first();
         this.checkout = this.page.locator("//button[text()='Checkout']");
     
 
@@ -11,13 +11,15 @@ export class MycartPage {
 
 
     async verifyProductinCart(productname) {
-        await this.div.first().waitFor();
+        await this.cartProducts.waitFor();
         const bool = await this.page.locator(`h3:has-text('${productname}')`).isVisible();
         expect(bool).toBeTruthy();
      };
 
     async gotoCheckout() {
        await this.checkout.click();
+       await this.page.waitForLoadState("domcontentloaded");
+
     };
 
 }
