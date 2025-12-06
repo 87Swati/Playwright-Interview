@@ -1,5 +1,6 @@
 import {test,expect} from '@playwright/test'
 
+test.describe.configure({ mode: 'parallel' });
 test('more validations',async ({page})=>{
 await page.goto("https://rahulshettyacademy.com/AutomationPractice/");
 // await page.goto("https://www.google.com/");
@@ -41,7 +42,7 @@ await page.pause();
 
 });
 
-test.fixme('Visual tesing  ',async ({page})=>{
+test('Visual tesing  ',async ({page})=>{
 await page.goto("https://www.flightaware.com/");
 expect(await page.screenshot()).toMatchSnapshot('flighthomepage.png');
 

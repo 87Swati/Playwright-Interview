@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 import { text } from 'stream/consumers';
 
 
-test.only('Browser context playwright testcase',async ({page})=>
+test('Browser context playwright testcase',async ({page})=>
 {
 
 const userEmail="jswati12@gmail.com";

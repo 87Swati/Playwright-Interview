@@ -35,7 +35,7 @@ console.log(alltitles);
 
 });
 
-test.only ('page context playwright testcase', async({page})=>
+test ('page context playwright testcase', async({page})=>
 {
 await page.goto("https://rahulshettyacademy.com/loginpagePractise/");
 const username=page.locator('#username');

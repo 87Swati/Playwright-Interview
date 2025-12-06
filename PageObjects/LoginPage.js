@@ -1,3 +1,4 @@
+  
     export class LoginPage {
 
         constructor(page) {
@@ -13,6 +14,7 @@
         await this.Email.fill(userEmail);
         await this.password.fill(password);
         await this.loginbutton.click();
+        await this.page.waitForLoadState('networkidle');
     }
 
     async goto(){
