@@ -61,7 +61,7 @@ await expect (page.getByText(" Thankyou for the order. ")).toBeVisible();
 
 
 console.log("swati");    
-    await page.pause();
+    //await page.pause();
 });
 
 

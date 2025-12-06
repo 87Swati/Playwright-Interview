@@ -90,7 +90,7 @@ expect (ordernumber.includes(pid1)).toBeTruthy();
 
 
 console.log("swati");    
-    await page.pause();
+    //await page.pause();
 });
 
 

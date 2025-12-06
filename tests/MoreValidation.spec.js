@@ -9,7 +9,7 @@ await page.goto("https://rahulshettyacademy.com/AutomationPractice/");
 await expect(page.locator("#displayed-text")).toBeVisible();
 await page.locator("#hide-textbox").click();
 await expect(page.locator("#displayed-text")).toBeHidden();
-await page.pause();
+//await page.pause();
 
 //handle java script dialog
 page.on('dialog', dialog=>dialog.accept());
