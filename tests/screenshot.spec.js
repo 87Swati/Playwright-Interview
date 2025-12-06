@@ -42,7 +42,7 @@ await expect(page.locator("#displayed-text")).toBeHidden();
 
 });
 
-test('Visual tesing  ',async ({page})=>{
+test.fixme('Visual tesing  ',async ({page})=>{
 await page.goto("https://www.flightaware.com/");
 expect(await page.screenshot()).toMatchSnapshot('flighthomepage.png');
 

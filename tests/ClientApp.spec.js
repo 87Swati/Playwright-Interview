@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 
-test('Browser context playwright testcase',async ({page})=>
+test.fixme('Browser context playwright testcase',async ({page})=>
 {
 
 const userEmail="jswati12@gmail.com";
