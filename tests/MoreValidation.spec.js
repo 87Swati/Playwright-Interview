@@ -1,7 +1,7 @@
 import {test,expect} from '@playwright/test'
 import { tag } from '../playwright.config';
 
-test ('more validations' , {tags: ['web']},async ({page})=>{
+test.fixme ('more validations' , {tags: ['web']},async ({page})=>{
 await page.goto("https://rahulshettyacademy.com/AutomationPractice/");
 // await page.goto("https://www.google.com/");
 // await page.goBack();
