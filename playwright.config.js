@@ -27,6 +27,8 @@ const config= defineConfig({
     screenshot: 'only-on-failure',//off //on //only-on-failure
     trace: 'retain-on-failure',//off //on //retain-on-failure
     viewport: { width: 1280, height: 720 },
+    //jds
+    
    
   },
 
