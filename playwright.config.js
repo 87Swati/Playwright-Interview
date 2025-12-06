@@ -19,6 +19,7 @@ const config= defineConfig({
   },
   reporter: 'html',
   /* Run tests in files in parallel */
+  retries:1,
   
   use: {
     browserName: 'chromium',

@@ -5,7 +5,7 @@ import { Customtest } from '../utils/test-base';
 
 
 for (const data of testData){
-test(`Cliecnt app login  for ${data.productname}`,async ({page})=>
+test(`@web Client app login  for ${data.productname}`,async ({page})=>
 {
 const poManager = new POManager(page);
 const loginpageobject = poManager.getLoginPage();

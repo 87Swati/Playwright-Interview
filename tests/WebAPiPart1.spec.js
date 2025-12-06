@@ -15,7 +15,7 @@ test.beforeAll(async()=> {
 );      
 
 
-test('Browser context playwright testcase',async ({page})=>
+test('Browser context playwright testcase',{tags: ['@api']},async ({page})=>
 {
 const ordersHeader= page.locator("button[routerlink*='myorders']");
 const rows = page.locator("tbody tr");

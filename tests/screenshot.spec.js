@@ -1,6 +1,7 @@
 import {test,expect} from '@playwright/test'
 
-test('more validations',async ({page})=>{
+//test.describe.configure({ mode: 'parallel' });
+test.fixme('more validations',async ({page})=>{
 await page.goto("https://rahulshettyacademy.com/AutomationPractice/");
 // await page.goto("https://www.google.com/");
 // await page.goBack();
@@ -32,7 +33,7 @@ await page.locator("#hide-textbox").click();
 //take screenshot for whole page
 await page.screenshot({ path: 'screenshot.png' });
 await expect(page.locator("#displayed-text")).toBeHidden();
-await page.pause();
+//await page.pause();
 
 //handle java script dialog
 

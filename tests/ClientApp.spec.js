@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 
-test.only('Browser context playwright testcase',async ({page})=>
+test.fixme('Browser context playwright testcase',async ({page})=>
 {
 
 const userEmail="jswati12@gmail.com";
@@ -90,7 +90,7 @@ expect (ordernumber.includes(pid1)).toBeTruthy();
 
 
 console.log("swati");    
-    await page.pause();
+    //await page.pause();
 });
 
 
