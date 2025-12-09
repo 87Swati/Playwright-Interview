@@ -1,26 +1,25 @@
-import { test, expect, request } from '@playwright/test';
-import { ApiUtils } from '../utils/ApiUtils.js';
+import { test, expect,request, type Page } from '@playwright/test';
+import { ApiUtils } from '../utils-ts/ApiUtils';
 
 const loginPayload = { userEmail: "jswati12@gmail.com", userPassword: "Data@1234" }
 const orderPayload = { orders: [{ country: "India", productOrderedId: "68a961459320a140fe1ca57a" }] };
 const fakePayLoadOrders = { data: [], message: "No Orders" };
   // const ordersHeader = page.locator("button[routerlink*='myorders']");
-let Orderesponse;
+  let orderResponse: { token: string; ordernumber: string };
 
 
 test.beforeAll(async () => {
 
    const apiContext = await request.newContext();
    const apiUtils = await new ApiUtils(apiContext, loginPayload);
-   Orderesponse = await apiUtils.createOrder(orderPayload);
-}
-);
+   orderResponse = await apiUtils.createOrder(orderPayload);
+})
 
 
 test('Verify the emplty state', async ({ page }) => {
    page.addInitScript(value => {
       window.localStorage.setItem('token', value);
-   }, Orderesponse.token);
+   }, orderResponse.token);
 
    await page.goto("https://rahulshettyacademy.com/client");
    await page.route("https://rahulshettyacademy.com/api/ecom/order/get-orders-for-customer/*",

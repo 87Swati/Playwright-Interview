@@ -1,4 +1,4 @@
-import { Page, expect } from '@playwright/test';
+import { Page, expect,locator } from '@playwright/test';
 export class MycartPage {
 
     constructor(page) {
