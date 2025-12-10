@@ -39,7 +39,8 @@ test('Browser context playwright testcase', async ({ page }) => {
 
     await page.getByRole("listitem").getByRole("button", { name: "Cart" }).click();
 
-    await page.locator("div li").first().waitFor();
+    // Wait for the cart page to load and the product to be visible
+    await page.waitForLoadState("domcontentloaded");
     await expect(page.getByText("Zara coat 3")).toBeVisible();
     await checkout.click();
     await page.waitForLoadState("domcontentloaded");

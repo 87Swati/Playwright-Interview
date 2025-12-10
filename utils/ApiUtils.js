@@ -22,7 +22,7 @@
         {
       data:orderPayload,
       headers:{
-         'Authorization':await this.gettoken(),
+         'Authorization':response.token,
          'Content-Type':'application/json'
       }
    })
