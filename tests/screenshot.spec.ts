@@ -17,7 +17,7 @@ await page.locator("#confirmbtn").click();
 await page.locator("#mousehover").hover();
 await page.getByText("Top").click();
 const framepage= page.frameLocator("#courses-iframe");
-await framepage.locator()
+// await framepage.locator() // Incomplete - commented out
 
 });
 
